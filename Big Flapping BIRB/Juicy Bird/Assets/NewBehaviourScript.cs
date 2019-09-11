@@ -18,6 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     public AudioSource ljud;
     public Text points;
     public float pointsIgen;
+    public float SoundReplay;
 
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         yta = gameObject.transform.GetSiblingIndex();
         tid = 3;
+        SoundReplay = 0;
     }
 
     // Update is called once per frame
@@ -63,13 +65,10 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (lose == true)
         {
-            if (ljud.isPlaying == false)
+            if (ljud.isPlaying == false && SoundReplay == 0) ;
             {
-                if (yta == 13)
-                {
-                    yta = yta / yta;
-                }
                 ljud.Play();
+                SoundReplay += 1f;
             }
             
             fysik.constraints = RigidbodyConstraints.FreezePosition;
