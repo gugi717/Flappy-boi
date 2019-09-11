@@ -9,7 +9,6 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject player;
     public Rigidbody fysik;
     public bool lose;
-    public float yta;
     public bool start;
     public List<GameObject> ajj;
     public GameObject pipetack;
@@ -24,7 +23,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        yta = gameObject.transform.GetSiblingIndex();
         tid = 3;
         SoundReplay = 0;
     }
@@ -33,7 +31,6 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         points.text = "Score: " + pointsIgen;
-        yta += tid;
         tid -= Time.deltaTime;
         if (tid <= 0)
         {
@@ -45,7 +42,6 @@ public class NewBehaviourScript : MonoBehaviour
             }
             if (r == 1)
             {
-                yta = transform.position.y;
                 typ = Instantiate(NERIPE, new Vector3(3, 0.6f, 0), Quaternion.identity);
             }
             ajj.Add(typ);
