@@ -54,7 +54,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             if (lose != true)
             {
-                if (Input.GetKeyDown(KeyCode.T))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     fysik.AddForce(Vector3.up * 250);
                 }
