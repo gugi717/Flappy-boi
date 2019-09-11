@@ -30,7 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        points.text = "Skor: " + pointsIgen;
+        points.text = "Score: " + pointsIgen;
         yta += tid;
         tid -= Time.deltaTime;
         if (tid <= 0)
