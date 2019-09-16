@@ -9,6 +9,7 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject player;
     public Rigidbody fysik;
     public bool lose;
+    public float yta;
     public bool start;
     public List<GameObject> ajj;
     public GameObject pipetack;
@@ -24,6 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         tid = 3;
         SoundReplay = 0;
         life = 1;
@@ -34,7 +36,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         points.text = "Score: " + pointsIgen;
         tid -= Time.deltaTime;
-        if (tid <= 0)
+        if (start == true && tid <= 0)
         {
             GameObject typ = new GameObject();
             int r = Random.Range(0, 2);
@@ -63,10 +65,13 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (lose == true)
         {
-            if (ljud.isPlaying == false && SoundReplay == 0) ;
+            if (ljud.isPlaying == false)
             {
+                if (yta == 13)
+                {
+                    yta = yta / yta;
+                }
                 ljud.Play();
-                SoundReplay += 1f;
             }
             
             fysik.constraints = RigidbodyConstraints.FreezePosition;
