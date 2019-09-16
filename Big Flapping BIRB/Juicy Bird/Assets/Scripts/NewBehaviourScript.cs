@@ -135,7 +135,7 @@ public class NewBehaviourScript : MonoBehaviour
             life -= 1;
         }
 
-        if (collision.gameObject.tag == "extralife")
+        if (collision.transform.tag == "extralife")
         {
             life += 1;
         }
