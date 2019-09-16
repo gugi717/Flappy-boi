@@ -46,9 +46,9 @@ public class NewBehaviourScript : MonoBehaviour
             ajj.Add(typ);
             if (r == 0)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 3.5f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 3.3f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(Lowerpipe, new Vector3(3, 1.5f, 0), Quaternion.identity);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 1.35f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 1)
@@ -65,14 +65,6 @@ public class NewBehaviourScript : MonoBehaviour
                 typ = Instantiate(Lowerpipe, new Vector3(3, 0.6f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
-            if (r == 3)
-            {
-                typ = Instantiate(Upperpipe, new Vector3(3, 3.2f, 0), Quaternion.identity);
-                ajj.Add(typ);
-                typ = Instantiate(Lowerpipe, new Vector3(3, 1.2f, 0), Quaternion.identity);
-                ajj.Add(typ);
-            }
-
 
             tid = 3;
         }
