@@ -13,6 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     public List<GameObject> ajj;
     public GameObject Upperpipe;
     public GameObject Lowerpipe;
+    public GameObject ExtraLife;
     public float tid;
     public AudioSource ljud;
     public Text points;
@@ -39,6 +40,10 @@ public class NewBehaviourScript : MonoBehaviour
         {
             GameObject typ = new GameObject();
             int r = Random.Range(0, 2);
+
+            typ = Instantiate(ExtraLife, new Vector3(4, 1.2f, 0), Quaternion.identity);
+
+            ajj.Add(typ);
 
             typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
 
@@ -72,7 +77,7 @@ public class NewBehaviourScript : MonoBehaviour
             Debug.Log("lost");
         }
 
-        if (ajj.Count > 5)
+        if (ajj.Count > 10)
         {
             Destroy(ajj[0]);
             ajj.RemoveAt(0);
@@ -129,7 +134,7 @@ public class NewBehaviourScript : MonoBehaviour
             life -= 1;
         }
 
-        if (collision.transform.tag == "extralife")
+        if (collision.gameObject.tag == "extralife")
         {
             life += 1;
         }
