@@ -17,6 +17,8 @@ public class NewBehaviourScript : MonoBehaviour
     public AudioSource ljud;
     public Text points;
     public float pointsIgen;
+    public float SoundReplay;
+    public float life;
 
 
     // Start is called before the first frame update
@@ -24,6 +26,8 @@ public class NewBehaviourScript : MonoBehaviour
     {
 
         tid = 3;
+        SoundReplay = 0;
+        life = 1;
     }
 
     // Update is called once per frame
@@ -46,7 +50,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (start == true)
         {
-            if (lose != true)
+            if (lose == false)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -109,13 +113,23 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
+        if (life <= 0)
+        {
+            lose = true;
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "DONTTOUCH")
         {
-            lose = true;
+            life -= 1;
+        }
+
+        if (collision.transform.tag == "extralife")
+        {
+            life += 1;
         }
     }
 }
