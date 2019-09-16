@@ -39,19 +39,41 @@ public class NewBehaviourScript : MonoBehaviour
         if (start == true && tid <= 0)
         {
             GameObject typ = new GameObject();
-            int r = Random.Range(0, 2);
+            int r = Random.Range(0, 3);
 
             typ = Instantiate(ExtraLife, new Vector3(4, 1.2f, 0), Quaternion.identity);
 
             ajj.Add(typ);
+            if (r == 0)
+            {
+                typ = Instantiate(Upperpipe, new Vector3(3, 3.5f, 0), Quaternion.identity);
+                ajj.Add(typ);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 1.5f, 0), Quaternion.identity);
+                ajj.Add(typ);
+            }
+            if (r == 1)
+            {
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.0f, 0), Quaternion.identity);
+                ajj.Add(typ);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 0.1f, 0), Quaternion.identity);
+                ajj.Add(typ);
+            }
+            if (r == 2)
+            {
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
+                ajj.Add(typ);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 0.6f, 0), Quaternion.identity);
+                ajj.Add(typ);
+            }
+            if (r == 3)
+            {
+                typ = Instantiate(Upperpipe, new Vector3(3, 3.2f, 0), Quaternion.identity);
+                ajj.Add(typ);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 1.2f, 0), Quaternion.identity);
+                ajj.Add(typ);
+            }
 
-            typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
 
-            ajj.Add(typ);
-
-            typ = Instantiate(Lowerpipe, new Vector3(3, 0.1f, 0), Quaternion.identity);
-
-            ajj.Add(typ);
             tid = 3;
         }
 
