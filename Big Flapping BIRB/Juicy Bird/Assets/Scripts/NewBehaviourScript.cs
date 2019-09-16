@@ -49,7 +49,7 @@ public class NewBehaviourScript : MonoBehaviour
 
             ajj.Add(typ);
 
-            typ = Instantiate(Lowerpipe, new Vector3(3, 0.6f, 0), Quaternion.identity);
+            typ = Instantiate(Lowerpipe, new Vector3(3, 0.1f, 0), Quaternion.identity);
 
             ajj.Add(typ);
             tid = 3;
@@ -98,6 +98,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (start == false)
         {
             fysik.constraints = RigidbodyConstraints.FreezePosition;
+            fysik.constraints = RigidbodyConstraints.FreezeRotation;
             Debug.Log("Not started");
         }
         else
