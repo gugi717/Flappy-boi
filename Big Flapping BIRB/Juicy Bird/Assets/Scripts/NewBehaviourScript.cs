@@ -40,11 +40,11 @@ public class NewBehaviourScript : MonoBehaviour
             GameObject typ = new GameObject();
             int r = Random.Range(0, 2);
 
-            typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
+            typ = Instantiate(Upperpipe, new Vector3(3, 2.0f, 0), Quaternion.identity);
 
             ajj.Add(typ);
 
-            typ = Instantiate(Lowerpipe, new Vector3(3, 0.6f, 0), Quaternion.identity);
+            typ = Instantiate(Lowerpipe, new Vector3(3, 0.1f, 0), Quaternion.identity);
 
             ajj.Add(typ);
             tid = 3;
@@ -93,6 +93,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (start == false)
         {
             fysik.constraints = RigidbodyConstraints.FreezePosition;
+            fysik.constraints = RigidbodyConstraints.FreezeRotation;
             Debug.Log("Not started");
         }
         else
