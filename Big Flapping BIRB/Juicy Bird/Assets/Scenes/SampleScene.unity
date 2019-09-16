@@ -375,11 +375,10 @@ MonoBehaviour:
   player: {fileID: 1597952192}
   fysik: {fileID: 264864084}
   lose: 0
-  yta: 0
   start: 0
   ajj: []
-  pipetack: {fileID: 561470008}
-  NERIPE: {fileID: 742445567}
+  Upperpipe: {fileID: 561470008}
+  Lowerpipe: {fileID: 742445567}
   tid: 0
   ljud: {fileID: 264864085}
   points: {fileID: 193982102}
@@ -392,7 +391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264864080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1597952196}
@@ -637,7 +636,7 @@ GameObject:
   - component: {fileID: 561470010}
   - component: {fileID: 561470009}
   m_Layer: 0
-  m_Name: Pipe up (1)
+  m_Name: Upperpipe
   m_TagString: DONTTOUCH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,7 +712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561470008}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 2.995, y: 2.455, z: 0}
+  m_LocalPosition: {x: 2.917, y: 2.455, z: 0}
   m_LocalScale: {x: 2.92, y: 6.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -822,7 +821,7 @@ GameObject:
   - component: {fileID: 742445569}
   - component: {fileID: 742445568}
   m_Layer: 0
-  m_Name: Pipe up
+  m_Name: Lowerpipe
   m_TagString: DONTTOUCH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1346,7 +1345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597952192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.041, y: -0.029, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 264864082}

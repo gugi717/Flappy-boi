@@ -9,11 +9,10 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject player;
     public Rigidbody fysik;
     public bool lose;
-    public float yta;
     public bool start;
     public List<GameObject> ajj;
-    public GameObject pipetack;
-    public GameObject NERIPE;
+    public GameObject Upperpipe;
+    public GameObject Lowerpipe;
     public float tid;
     public AudioSource ljud;
     public Text points;
@@ -36,14 +35,11 @@ public class NewBehaviourScript : MonoBehaviour
         {
             GameObject typ = new GameObject();
             int r = Random.Range(0, 2);
-            if (r == 0)
-            {
-                typ = Instantiate(pipetack, new Vector3(3, 2.5f, 0), Quaternion.identity);
-            }
-            if (r == 1)
-            {
-                typ = Instantiate(NERIPE, new Vector3(3, 0.6f, 0), Quaternion.identity);
-            }
+
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
+
+                typ = Instantiate(Lowerpipe, new Vector3(3, 0.6f, 0), Quaternion.identity);
+
             ajj.Add(typ);
             tid = 3;
         }
@@ -63,10 +59,6 @@ public class NewBehaviourScript : MonoBehaviour
         {
             if (ljud.isPlaying == false)
             {
-                if (yta == 13)
-                {
-                    yta = yta / yta;
-                }
                 ljud.Play();
             }
             
@@ -74,7 +66,7 @@ public class NewBehaviourScript : MonoBehaviour
             Debug.Log("lost");
         }
 
-        if (ajj.Count > 10)
+        if (ajj.Count > 5)
         {
             Destroy(ajj[0]);
             ajj.RemoveAt(0);
