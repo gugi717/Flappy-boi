@@ -87,7 +87,7 @@ public class NewBehaviourScript : MonoBehaviour
                 ljud.Play();
             }
             
-            fysik.constraints = RigidbodyConstraints.FreezePosition;
+            fysik.constraints = RigidbodyConstraints.FreezeAll;
             Debug.Log("lost");
         }
 
