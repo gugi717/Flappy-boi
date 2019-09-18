@@ -14,6 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject Upperpipe;
     public GameObject Lowerpipe;
     public GameObject ExtraLife;
+    public GameObject LifeParticleSystem;
     public float tid;
     public AudioSource ljud;
     public Text points;
@@ -186,6 +187,10 @@ public class NewBehaviourScript : MonoBehaviour
         if (other.transform.tag == "extralife")
         {
             life += 1;
-        }
+            GameObject typ = new GameObject();
+
+            typ = Instantiate(LifeParticleSystem, new Vector3(-0.534f, 1.453f, 0), Quaternion.identity);
+            ajj.Add(typ);
+        }   
     }
 }
