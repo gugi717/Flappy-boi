@@ -36,33 +36,40 @@ public class NewBehaviourScript : MonoBehaviour
     {
         points.text = "Score: " + pointsIgen;
         tid -= Time.deltaTime;
-        if (start == true && tid <= 0)
+        if (start == true && tid <= 0.6)
         {
             GameObject typ = new GameObject();
-            int r = Random.Range(0, 3);
+            int r = Random.Range(0, 4);
 
             typ = Instantiate(ExtraLife, new Vector3(4, 1.2f, 0), Quaternion.identity);
 
             ajj.Add(typ);
             if (r == 0)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 3.0f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 3.1f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, 0.0f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 1)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 3.0f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 3.4f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(Lowerpipe, new Vector3(3, 0.5f, 0), Quaternion.identity);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 0.3f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 2)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.8f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(Lowerpipe, new Vector3(3, 0.0f, 0), Quaternion.identity);
+                typ = Instantiate(Lowerpipe, new Vector3(3, -0.6f, 0), Quaternion.identity);
+                ajj.Add(typ);
+            }
+            if (r == 3)
+            {
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.3f, 0), Quaternion.identity);
+                ajj.Add(typ);
+                typ = Instantiate(Lowerpipe, new Vector3(3, -0.8f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
 
@@ -75,7 +82,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    fysik.AddForce(Vector3.up * 250);
+                    fysik.AddForce(Vector3.up * 75);
                 }
             }
         }
@@ -112,7 +119,6 @@ public class NewBehaviourScript : MonoBehaviour
         if (start == false)
         {
             fysik.constraints = RigidbodyConstraints.FreezePosition;
-            fysik.constraints = RigidbodyConstraints.FreezeRotation;
             Debug.Log("Not started");
         }
         else
@@ -131,7 +137,7 @@ public class NewBehaviourScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 start = true;
-                fysik.AddForce(Vector3.up * 250);
+                fysik.AddForce(Vector3.up * 75);
             }
         }
 
