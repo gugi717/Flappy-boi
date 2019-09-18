@@ -39,7 +39,7 @@ public class NewBehaviourScript : MonoBehaviour
         if (start == true && tid <= 0.6)
         {
             GameObject typ = new GameObject();
-            int r = Random.Range(0, 7);
+            int r = Random.Range(0, 8);
 
             ajj.Add(typ);
             if (r == 0)
@@ -58,7 +58,7 @@ public class NewBehaviourScript : MonoBehaviour
             }
             if (r == 2)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 2.8f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.6f, 0), Quaternion.identity);
                 ajj.Add(typ);
@@ -79,23 +79,23 @@ public class NewBehaviourScript : MonoBehaviour
             }
             if (r == 5)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 3.4f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 4.0f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(Lowerpipe, new Vector3(3, 0.3f, 0), Quaternion.identity);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 0.775f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 6)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 2.8f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 3.2f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(Lowerpipe, new Vector3(3, -0.6f, 0), Quaternion.identity);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 0.1f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 7)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 2.3f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(Lowerpipe, new Vector3(3, -0.8f, 0), Quaternion.identity);
+                typ = Instantiate(Lowerpipe, new Vector3(3, -0.7f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 typ = Instantiate(ExtraLife, new Vector3(4, 1.2f, 0), Quaternion.identity);
                 ajj.Add(typ);
