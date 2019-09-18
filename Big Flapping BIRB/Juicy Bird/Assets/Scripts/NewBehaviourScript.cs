@@ -148,14 +148,14 @@ public class NewBehaviourScript : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.transform.tag == "DONTTOUCH")
+        if (other.transform.tag == "DONTTOUCH")
         {
             life -= 1;
         }
 
-        if (collision.transform.tag == "extralife")
+        if (other.transform.tag == "extralife")
         {
             life += 1;
         }
