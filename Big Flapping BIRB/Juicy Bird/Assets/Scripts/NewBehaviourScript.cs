@@ -15,11 +15,12 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject Lowerpipe;
     public GameObject ExtraLife;
     public GameObject LifeParticleSystem;
+    public GameObject GivePoint;
     public float tid;
     public AudioSource ljud;
     public Text points;
     public float pointsIgen;
-    public float SoundReplay;
+    public bool SoundReplay;
     public float life;
 
 
@@ -28,7 +29,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
 
         tid = 3;
-        SoundReplay = 0;
+        SoundReplay = false;
         life = 1;
     }
 
@@ -136,7 +137,11 @@ public class NewBehaviourScript : MonoBehaviour
         {
             if (ljud.isPlaying == false)
             {
-                ljud.Play();
+                if (SoundReplay == false)
+                {
+                    ljud.Play();
+                    SoundReplay = true;
+                }
             }
             
             fysik.constraints = RigidbodyConstraints.FreezeAll;
