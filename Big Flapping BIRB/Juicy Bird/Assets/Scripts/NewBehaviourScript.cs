@@ -16,7 +16,6 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject ExtraLife;
     public GameObject GivePoint;
     public GameObject LifeParticleSystem;
-    public GameObject GivePoint;
     public float tid;
     public AudioSource ljud;
     public Text points;
@@ -29,7 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
 
-        tid = 3;
+        tid = 2;
         SoundReplay = false;
         life = 1;
     }
@@ -39,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         points.text = "Score: " + pointsIgen;
         tid -= Time.deltaTime;
-        if (start == true && tid <= 0.6)
+        if (start == true && tid <= 0)
         {
             GameObject typ = new GameObject();
             int r = Random.Range(0, 8);
@@ -100,13 +99,13 @@ public class NewBehaviourScript : MonoBehaviour
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.7f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(ExtraLife, new Vector3(4, 1.2f, 0), Quaternion.identity);
+                typ = Instantiate(ExtraLife, new Vector3(3.5f, 1.2f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
 
             typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
             ajj.Add(typ);
-            tid = 3;
+            tid = 2;
         }
 
         if (start == true)
@@ -135,7 +134,7 @@ public class NewBehaviourScript : MonoBehaviour
             Debug.Log("lost");
         }
 
-        if (ajj.Count > 10)
+        if (ajj.Count > 17)
         {
             Destroy(ajj[0]);
             ajj.RemoveAt(0);
@@ -143,7 +142,7 @@ public class NewBehaviourScript : MonoBehaviour
         for (int i = 0; i < ajj.Count; i++)
         {
 
-            ajj[i].transform.position -= new Vector3(1 * Time.deltaTime, 0, 0);
+            ajj[i].transform.position -= new Vector3(0.7f * Time.deltaTime, 0, 0);
         }
 
         if (start == false)

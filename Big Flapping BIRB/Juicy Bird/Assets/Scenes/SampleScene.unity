@@ -588,7 +588,7 @@ MonoBehaviour:
   Lowerpipe: {fileID: 742445567}
   ExtraLife: {fileID: 989952461}
   GivePoint: {fileID: 1139819364}
-  LifeParticleSystem: {fileID: 0}
+  LifeParticleSystem: {fileID: 443551674}
   tid: 0
   ljud: {fileID: 264864085}
   points: {fileID: 193982102}
