@@ -41,7 +41,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         points.text = "Score: " + pointsIgen;
         tid -= Time.deltaTime;
-        if (start == true && tid <= 0.6 && life > 0)
+        if (start == true && tid <= 0 && life > 0)
         {
             GameObject typ = new GameObject();
             int r = Random.Range(0, 8);
