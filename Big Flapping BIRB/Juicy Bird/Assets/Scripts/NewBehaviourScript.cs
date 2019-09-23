@@ -182,9 +182,10 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "DONTTOUCH")
+        if (other.transform.tag == "DONTTOUCH" && !lose)
         {
             life -= 1;
+            CameraShake.Shake(0.5f);
         }
 
         if (other.transform.tag == "extralife")
