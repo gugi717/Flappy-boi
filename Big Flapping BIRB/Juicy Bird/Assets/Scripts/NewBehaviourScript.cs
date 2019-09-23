@@ -16,13 +16,13 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject ExtraLife;
     public GameObject GivePoint;
     public GameObject LifeParticleSystem;
-    public GameObject GivePoint;
     public float tid;
     public AudioSource ljud;
     public Text points;
     public float pointsIgen;
     public bool SoundReplay;
     public float life;
+    public Text TextLife;
 
 
     // Start is called before the first frame update
@@ -37,9 +37,11 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TextLife.text = "Hp: " + life;
+
         points.text = "Score: " + pointsIgen;
         tid -= Time.deltaTime;
-        if (start == true && tid <= 0.6)
+        if (start == true && tid <= 0.6 && life > 0)
         {
             GameObject typ = new GameObject();
             int r = Random.Range(0, 8);
