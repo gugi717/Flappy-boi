@@ -50,16 +50,12 @@ public class NewBehaviourScript : MonoBehaviour
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, 0.0f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
-                ajj.Add(typ);
             }
             if (r == 1)
             {
                 typ = Instantiate(Upperpipe, new Vector3(3, 3.4f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, 0.3f, 0), Quaternion.identity);
-                ajj.Add(typ);
-                typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 2)
@@ -68,16 +64,12 @@ public class NewBehaviourScript : MonoBehaviour
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.6f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
-                ajj.Add(typ);
             }
             if (r == 3)
             {
                 typ = Instantiate(Upperpipe, new Vector3(3, 2.3f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.8f, 0), Quaternion.identity);
-                ajj.Add(typ);
-                typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 4)
@@ -86,8 +78,6 @@ public class NewBehaviourScript : MonoBehaviour
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, 0.0f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
-                ajj.Add(typ);
             }
             if (r == 5)
             {
@@ -95,16 +85,12 @@ public class NewBehaviourScript : MonoBehaviour
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, 0.775f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
-                ajj.Add(typ);
             }
             if (r == 6)
             {
                 typ = Instantiate(Upperpipe, new Vector3(3, 3.2f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, 0.1f, 0), Quaternion.identity);
-                ajj.Add(typ);
-                typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 7)
@@ -115,10 +101,10 @@ public class NewBehaviourScript : MonoBehaviour
                 ajj.Add(typ);
                 typ = Instantiate(ExtraLife, new Vector3(4, 1.2f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
-                ajj.Add(typ);
             }
 
+            typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
+            ajj.Add(typ);
             tid = 3;
         }
 

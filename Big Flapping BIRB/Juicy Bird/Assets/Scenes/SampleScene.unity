@@ -587,8 +587,8 @@ MonoBehaviour:
   Upperpipe: {fileID: 561470008}
   Lowerpipe: {fileID: 742445567}
   ExtraLife: {fileID: 989952461}
-  LifeParticleSystem: {fileID: 443551674}
   GivePoint: {fileID: 1139819364}
+  LifeParticleSystem: {fileID: 0}
   tid: 0
   ljud: {fileID: 264864085}
   points: {fileID: 193982102}
@@ -765,8 +765,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f89d804cc3ede54dabeb74512f711f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amplitude: {x: 0, y: 0}
-  Frequency: {x: 0, y: 0}
+  Amplitude: {x: 0.2, y: 0.3}
+  Frequency: {x: 30, y: 15}
 --- !u!4 &271473383
 Transform:
   m_ObjectHideFlags: 0
@@ -6130,7 +6130,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -0.036000002, y: 2.21, z: 27.422}
 --- !u!1 &963194225
 GameObject:
@@ -6351,7 +6351,7 @@ Transform:
   m_LocalScale: {x: 0.16998, y: 7.5429854, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141367936 stripped
 GameObject:
