@@ -48,6 +48,11 @@ public class NewBehaviourScript : MonoBehaviour
             SceneManager.LoadScene("MainScene");
         }
 
+        if (Input.GetKeyDown("escape"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
        // anim.SetBool("Jump", Jump);
 
         //Grim
