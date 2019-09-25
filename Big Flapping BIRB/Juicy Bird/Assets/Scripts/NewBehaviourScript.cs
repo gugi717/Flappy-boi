@@ -199,8 +199,7 @@ public class NewBehaviourScript : MonoBehaviour
             life += 1;
             GameObject typ = new GameObject();
 
-          //  typ = Instantiate(LifeParticleSystem, new Vector3(-0.534f, 1.453f, 0), Quaternion.identity);
-          //  ajj.Add(typ);
+            typ = Instantiate(LifeParticleSystem, new Vector3(-0.534f, 1.453f, 0), Quaternion.identity);
         }
 
         if (other.transform.tag == "Point" && !lose)

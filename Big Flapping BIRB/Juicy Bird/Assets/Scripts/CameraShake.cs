@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    // Gustav
     public Vector2 Amplitude;
     public Vector2 Frequency;
     Vector2 time = Vector2.zero;
@@ -28,22 +29,22 @@ public class CameraShake : MonoBehaviour
 
         if (Shaketime > 0)
         {
-            shouldShake = true;
+            shouldShake = true; // activates the shake
         }
         else
         {
             shouldShake = false;
         }
 
-        Shaketime -= Time.deltaTime;
+        Shaketime -= Time.deltaTime; // how it counts how long you want the shake
 
         if (shouldShake)
         {
-            ShakePos = new Vector3(Mathf.Sin(time.x),Mathf.Sin(time.y),0)* Amplitude;
+            ShakePos = new Vector3(Mathf.Sin(time.x),Mathf.Sin(time.y),0)* Amplitude; // the row of code that takes the variables to move the object accordingly.
         }
         else
         {
-            ShakePos = Vector3.zero;
+            ShakePos = Vector3.zero; // resets to default position when not being used
         }
 
         transform.localPosition = ShakePos;
@@ -52,10 +53,10 @@ public class CameraShake : MonoBehaviour
     public static void Shake(bool value)
     {
         shouldShake = value;
-    }
+    } //usless just an example
 
-    public static void Shake(float timeShake)
+    public static void Shake(float timeShake) // Exist so you can call on the funktion without having a GetComponent.
     {
-        Shaketime = timeShake;
+        Shaketime = timeShake; 
     }
 }
