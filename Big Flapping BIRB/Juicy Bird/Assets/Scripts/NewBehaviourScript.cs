@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class NewBehaviourScript : MonoBehaviour
 {
 
+    //Variables
     public GameObject player;
     public Rigidbody fysik;
     public bool lose;
@@ -29,7 +30,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         tid = 2;
         SoundReplay = false;
         life = 1;
@@ -38,14 +38,18 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Grim
+        //Checks if key r is pressed if so you reload/restart the game.
         if (Input.GetKeyDown("r"))
         {
             SceneManager.LoadScene("MainScene");
         }
 
+        //Grim
+        //The hp and score shown on screen
         TextLife.text = "Hp: " + life;
-
         points.text = "Score: " + pointsIgen;
+
         tid -= Time.deltaTime;
         if (start == true && tid <= 0 && life > 0)
         {
@@ -108,6 +112,8 @@ public class NewBehaviourScript : MonoBehaviour
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.7f, 0), Quaternion.identity);
                 ajj.Add(typ);
+                //Grim
+                //Extra life is spawned 1/7 of the times
                 typ = Instantiate(ExtraLife, new Vector3(3.5f, 1f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
@@ -128,12 +134,17 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
+        //Grim
+        //Checks if you have lost
         if (lose == true)
         {
+            //Checks if sound is playing
             if (ljud.isPlaying == false)
             {
+                //Checks if the sound has played
                 if (SoundReplay == false)
                 {
+                    //Plays sound
                     ljud.Play();
                     SoundReplay = true;
                 }
@@ -179,6 +190,8 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
 
+        //Grim
+        //Makes you lose if you have 0 or less hp
         if (life <= 0)
         {
             lose = true;
@@ -188,19 +201,24 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Grim
+        //A collider put on roof, floor and pillars to do damage to the player
         if (other.transform.tag == "DONTTOUCH" && !lose)
         {
             life -= 1;
+            //Gustav
+            //Starts camera shake if you die/takes damage
             CameraShake.Shake(0.5f);
         }
 
+        //Grim
+        //The tag that is put on the power up "extra life" to give the player more hp and summon a particle
         if (other.transform.tag == "extralife" && life < 3)
         {
             life += 1;
             GameObject typ = new GameObject();
 
           //  typ = Instantiate(LifeParticleSystem, new Vector3(-0.534f, 1.453f, 0), Quaternion.identity);
-          //  ajj.Add(typ);
         }
 
         if (other.transform.tag == "Point" && !lose)
