@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -37,6 +38,11 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene("MainScene");
+        }
+
         TextLife.text = "Hp: " + life;
 
         points.text = "Score: " + pointsIgen;
@@ -102,7 +108,7 @@ public class NewBehaviourScript : MonoBehaviour
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.7f, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(ExtraLife, new Vector3(3.5f, 1.2f, 0), Quaternion.identity);
+                typ = Instantiate(ExtraLife, new Vector3(3.5f, 1f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
 
@@ -193,8 +199,8 @@ public class NewBehaviourScript : MonoBehaviour
             life += 1;
             GameObject typ = new GameObject();
 
-            typ = Instantiate(LifeParticleSystem, new Vector3(-0.534f, 1.453f, 0), Quaternion.identity);
-            ajj.Add(typ);
+          //  typ = Instantiate(LifeParticleSystem, new Vector3(-0.534f, 1.453f, 0), Quaternion.identity);
+          //  ajj.Add(typ);
         }
 
         if (other.transform.tag == "Point" && !lose)
