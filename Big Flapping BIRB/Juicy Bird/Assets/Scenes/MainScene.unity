@@ -611,6 +611,8 @@ MonoBehaviour:
   SoundReplay: 0
   life: 0
   TextLife: {fileID: 2106791974}
+  JumpDelay: 0
+  OnLose: 0
 --- !u!4 &264864082
 Transform:
   m_ObjectHideFlags: 0

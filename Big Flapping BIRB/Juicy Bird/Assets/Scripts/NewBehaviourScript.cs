@@ -26,8 +26,8 @@ public class NewBehaviourScript : MonoBehaviour
     public float life;
     public Text TextLife;
     public float JumpDelay = 0;
+    public bool OnLose;
     Animator anim;
-
     protected bool Jump = false;
 
     // Start is called before the first frame update
@@ -208,6 +208,7 @@ public class NewBehaviourScript : MonoBehaviour
         //Makes you lose if you have 0 or less hp
         if (life <= 0)
         {
+            OnLose = true;
             lose = true;
         }
 
