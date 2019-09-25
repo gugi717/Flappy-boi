@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    // Gustav
+    // Everythin is Gustav
     public Vector2 Amplitude;
     public Vector2 Frequency;
     Vector2 time = Vector2.zero;
@@ -53,7 +53,7 @@ public class CameraShake : MonoBehaviour
     public static void Shake(bool value)
     {
         shouldShake = value;
-    } //usless just an example
+    } //useless just an example
 
     public static void Shake(float timeShake) // Exist so you can call on the funktion without having a GetComponent.
     {

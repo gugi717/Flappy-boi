@@ -595,7 +595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45470ab25604e34a81eb58fcf24ad54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   fysik: {fileID: 264864084}
   lose: 0
   start: 0

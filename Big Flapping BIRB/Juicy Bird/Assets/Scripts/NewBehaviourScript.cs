@@ -8,7 +8,6 @@ public class NewBehaviourScript : MonoBehaviour
 {
 
     //Variables
-    public GameObject player;
     public Rigidbody fysik;
     public bool lose;
     public bool start;
@@ -53,24 +52,22 @@ public class NewBehaviourScript : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
         }
 
-       // anim.SetBool("Jump", Jump);
-
         //Grim
         //The hp and score shown on screen
         TextLife.text = "Hp: " + life;
         points.text = "Score: " + pointsIgen;
 
         tid -= Time.deltaTime;
-        if (start == true && tid <= 0 && life > 0)
+        if (start == true && tid <= 0 && !lose) // Gustav, If you have started the game there is a delay to activate the funktion
         {
             GameObject typ = new GameObject();
-            int r = Random.Range(0, 8);
+            ajj.Add(typ); //stops the row above from spawning empty gameobject that newer despawns
+            int r = Random.Range(0, 8); //Gustav, Pick a random nummber so it can pick between the premade sets
 
-            ajj.Add(typ);
             if (r == 0)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 3.1f, 0), Quaternion.identity);
-                ajj.Add(typ);
+                typ = Instantiate(Upperpipe, new Vector3(3, 3.1f, 0), Quaternion.identity); //Gustav, spawns a pipe in the location that has been set
+                ajj.Add(typ); // places them in an array
                 typ = Instantiate(Lowerpipe, new Vector3(3, 0.0f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
@@ -127,10 +124,10 @@ public class NewBehaviourScript : MonoBehaviour
                 typ = Instantiate(ExtraLife, new Vector3(3.5f, 1f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
-
-            typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity);
+            //Gustav, spawns an emnty gameobject that has a boxcollider that when toched gives a point due to the tag
+            typ = Instantiate(GivePoint, new Vector3(3, 0.0f, 0), Quaternion.identity); 
             ajj.Add(typ);
-            tid = 2;
+            tid = 2;// resets the timer
         }
 
         if (start == true)
@@ -139,12 +136,12 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    fysik.AddForce(Vector3.up * 75);
-                    anim.SetBool("Jump", true);
+                    fysik.AddForce(Vector3.up * 75); //Gustav, makes that player jump
+                    anim.SetBool("Jump", true); //Gustav, plays the animation for jumping/flying
                 }
                 else
                 {
-                    anim.SetBool("Jump", false);
+                    anim.SetBool("Jump", false); //Gustav, stops the animation when falling
                 }
             }
         }
@@ -172,18 +169,18 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (ajj.Count > 17)
         {
-            Destroy(ajj[0]);
+            Destroy(ajj[0]); //destroys gameobjects in the array after so many has spawned 
             ajj.RemoveAt(0);
         }
         for (int i = 0; i < ajj.Count; i++)
         {
             if (!lose)
             {
-                ajj[i].transform.position -= new Vector3(0.7f * Time.deltaTime, 0, 0);
+                ajj[i].transform.position -= new Vector3(0.7f * Time.deltaTime, 0, 0); //Is the thing that moves the "pipes"
             }
 
         }
-
+        // makes so you don't die before starting the game for real
         if (start == false)
         {
             fysik.constraints = RigidbodyConstraints.FreezePosition;
@@ -199,7 +196,7 @@ public class NewBehaviourScript : MonoBehaviour
             }
             
         }
-
+        // Gustav, starts the game
         if (start == false)
         {
             if (Input.GetKeyDown(KeyCode.Space))
