@@ -48,7 +48,7 @@ public class NewBehaviourScript : MonoBehaviour
             SceneManager.LoadScene("MainScene");
         }
 
-        anim.SetBool("Jump", Jump);
+       // anim.SetBool("Jump", Jump);
 
         //Grim
         //The hp and score shown on screen
@@ -137,12 +137,12 @@ public class NewBehaviourScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     fysik.AddForce(Vector3.up * 75);
-
+                    Jump = true;
                     JumpDelay = 1;
                
                     if (JumpDelay <= 0)
                     {
-
+                        Jump = false;
                     }
                 }
             }
