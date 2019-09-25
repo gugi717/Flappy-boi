@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 264864083}
   - component: {fileID: 264864085}
   - component: {fileID: 264864086}
+  - component: {fileID: 264864087}
   m_Layer: 0
   m_Name: Game boi
   m_TagString: Untagged
@@ -609,8 +610,9 @@ MonoBehaviour:
   points: {fileID: 193982102}
   pointsIgen: 0
   SoundReplay: 0
-  life: 0
+  life: 1
   TextLife: {fileID: 2106791974}
+  JumpDelay: 0
 --- !u!4 &264864082
 Transform:
   m_ObjectHideFlags: 0
@@ -921,6 +923,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &264864087
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264864080}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9f849d7a325b2842bca1d939aac3c15, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &271473381
 GameObject:
   m_ObjectHideFlags: 0
