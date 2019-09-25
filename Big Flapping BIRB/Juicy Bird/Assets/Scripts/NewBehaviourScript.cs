@@ -26,8 +26,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float life;
     public Text TextLife;
     public float JumpDelay = 0;
-    public bool OnLose;
-    Animator anim;
+    public Animator anim;
     protected bool Jump = false;
 
     // Start is called before the first frame update
@@ -36,6 +35,7 @@ public class NewBehaviourScript : MonoBehaviour
         tid = 2;
         SoundReplay = false;
         life = 1;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -180,8 +180,11 @@ public class NewBehaviourScript : MonoBehaviour
         }
         for (int i = 0; i < ajj.Count; i++)
         {
+            if (!lose)
+            {
+                ajj[i].transform.position -= new Vector3(0.7f * Time.deltaTime, 0, 0);
+            }
 
-            ajj[i].transform.position -= new Vector3(0.7f * Time.deltaTime, 0, 0);
         }
 
         if (start == false)
@@ -213,8 +216,8 @@ public class NewBehaviourScript : MonoBehaviour
         //Makes you lose if you have 0 or less hp
         if (life <= 0)
         {
-            OnLose = true;
             lose = true;
+            anim.SetBool("OnLose", true);
         }
 
     }
