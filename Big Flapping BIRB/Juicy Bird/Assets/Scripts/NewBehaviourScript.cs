@@ -113,7 +113,7 @@ public class NewBehaviourScript : MonoBehaviour
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.7f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 //Grim
-                //Extra life is spawned 1/7 of the times
+                //Extra life is spawned 1/8 of the times
                 typ = Instantiate(ExtraLife, new Vector3(3.5f, 1f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
@@ -218,10 +218,10 @@ public class NewBehaviourScript : MonoBehaviour
             life += 1;
             GameObject typ = new GameObject();
 
-            typ = Instantiate(LifeParticleSystem, new Vector3(-0.534f, 1.453f, 0), Quaternion.identity);
+            typ = Instantiate(LifeParticleSystem, new Vector3(-0.534f, 1, 0), Quaternion.identity);
         }
 
-        if (other.transform.tag == "Point" && !lose)
+        if (other.transform.tag == "Point" && !lose) // We spawn emty gameobject between the "pipes" that has a trigger collider and tag to give you a point
         {
             pointsIgen += 1;
         }
