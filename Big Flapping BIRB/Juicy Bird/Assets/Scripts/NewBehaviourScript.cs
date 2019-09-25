@@ -48,7 +48,8 @@ public class NewBehaviourScript : MonoBehaviour
             SceneManager.LoadScene("MainScene");
         }
 
-       // anim.SetBool("Jump", Jump);
+        // anim.SetBool("Jump", Jump);
+        //anim.SetBool("OnLose", OnLose);
 
         //Grim
         //The hp and score shown on screen
@@ -78,14 +79,14 @@ public class NewBehaviourScript : MonoBehaviour
             }
             if (r == 2)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 2.5f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.55f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.6f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 3)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 2.3f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 2.4f, 0), Quaternion.identity);
                 ajj.Add(typ);
                 typ = Instantiate(Lowerpipe, new Vector3(3, -0.8f, 0), Quaternion.identity);
                 ajj.Add(typ);
@@ -99,9 +100,9 @@ public class NewBehaviourScript : MonoBehaviour
             }
             if (r == 5)
             {
-                typ = Instantiate(Upperpipe, new Vector3(3, 4.0f, 0), Quaternion.identity);
+                typ = Instantiate(Upperpipe, new Vector3(3, 4, 0), Quaternion.identity);
                 ajj.Add(typ);
-                typ = Instantiate(Lowerpipe, new Vector3(3, 0.775f, 0), Quaternion.identity);
+                typ = Instantiate(Lowerpipe, new Vector3(3, 0.7f, 0), Quaternion.identity);
                 ajj.Add(typ);
             }
             if (r == 6)
