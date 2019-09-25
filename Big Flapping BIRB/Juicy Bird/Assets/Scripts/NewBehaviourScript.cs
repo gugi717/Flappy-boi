@@ -48,8 +48,12 @@ public class NewBehaviourScript : MonoBehaviour
             SceneManager.LoadScene("MainScene");
         }
 
-        // anim.SetBool("Jump", Jump);
-        //anim.SetBool("OnLose", OnLose);
+        if (Input.GetKeyDown("escape"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+       // anim.SetBool("Jump", Jump);
 
         //Grim
         //The hp and score shown on screen
