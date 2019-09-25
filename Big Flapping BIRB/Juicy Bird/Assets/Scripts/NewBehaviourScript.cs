@@ -26,7 +26,7 @@ public class NewBehaviourScript : MonoBehaviour
     public float life;
     public Text TextLife;
     public float JumpDelay = 0;
-    public Animator anim;
+    private Animator anim;
     protected bool Jump = false;
 
     // Start is called before the first frame update
@@ -133,8 +133,6 @@ public class NewBehaviourScript : MonoBehaviour
             tid = 2;
         }
 
-        JumpDelay -= 1 * Time.deltaTime;
-
         if (start == true)
         {
             if (lose == false)
@@ -142,16 +140,15 @@ public class NewBehaviourScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     fysik.AddForce(Vector3.up * 75);
-                    Jump = true;
-                    JumpDelay = 1;
-               
-                    if (JumpDelay <= 0)
-                    {
-                        Jump = false;
-                    }
+                    anim.SetBool("Jump", true);
+                }
+                else
+                {
+                    anim.SetBool("Jump", false);
                 }
             }
         }
+
 
         //Grim
         //Checks if you have lost
@@ -209,6 +206,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 start = true;
                 fysik.AddForce(Vector3.up * 75);
+                anim.SetBool("Jump", true);
             }
         }
 
