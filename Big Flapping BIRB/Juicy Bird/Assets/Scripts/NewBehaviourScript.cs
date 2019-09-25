@@ -25,7 +25,10 @@ public class NewBehaviourScript : MonoBehaviour
     public bool SoundReplay;
     public float life;
     public Text TextLife;
+    public float JumpDelay = 0;
+    Animator anim;
 
+    protected bool Jump = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +47,8 @@ public class NewBehaviourScript : MonoBehaviour
         {
             SceneManager.LoadScene("MainScene");
         }
+
+        anim.SetBool("Jump", Jump);
 
         //Grim
         //The hp and score shown on screen
@@ -123,6 +128,8 @@ public class NewBehaviourScript : MonoBehaviour
             tid = 2;
         }
 
+        JumpDelay -= 1 * Time.deltaTime;
+
         if (start == true)
         {
             if (lose == false)
@@ -130,6 +137,13 @@ public class NewBehaviourScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     fysik.AddForce(Vector3.up * 75);
+
+                    JumpDelay = 1;
+               
+                    if (JumpDelay <= 0)
+                    {
+
+                    }
                 }
             }
         }
