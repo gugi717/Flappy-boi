@@ -194,7 +194,7 @@ public class NewBehaviourScript : MonoBehaviour
             CameraShake.Shake(0.5f);
         }
 
-        if (other.transform.tag == "extralife")
+        if (other.transform.tag == "extralife" && life < 3)
         {
             life += 1;
             GameObject typ = new GameObject();
